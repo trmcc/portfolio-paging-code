@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sullivan Design and Construction</title>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+        <meta content="Bob Sullivan, Robert Sullivan, design, build, woodworking, furniture, dallas, texas" name="keywords" />
+        <meta content="Bob Sullivan creates beautiful woodwork that enhances the modern home." name="description" />
+
+    <link rel="stylesheet" type="text/css" href="jscss/bobcss.css" />
+
+    <script type="text/javascript" src="jscss/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/Users/Tricia/Documents/Work/Marc/Site - update with Sullivan code/jscss/utilmm.js"></script>
+    <script type="text/javascript" src="jscss/structure.js"></script>
+    
+    
+    <script type="text/javascript">
+    <!--
+
+        $( document ).ready(function() {
+            // executes when HTML-Document is loaded and DOM is ready
+            
+            // inline contact link
+            $("#contact").click(function() {
+                fadeNgo("contact.htm");
+            });
+
+            // attach click events to pictures
+            $( "#pic1" ).click(function() {
+                fadeNgo("pages/stairs.htm");
+            });
+            $( "#pic2" ).click(function() {
+                fadeNgo("pages/built.htm");
+            });
+            $( "#pic3" ).click(function() {
+                fadeNgo("pages/furniture.htm");
+            });
+            
+        });
+
+        $(window).load(function() {
+            // executes when complete page is fully loaded, including all frames, objects and images
+
+            // make it fit into visible area
+            setContainerSize ("container");
+            
+            // set the page to visible
+            showPage("container");
+        });
+    
+        $(window).resize(function() {
+            //resize event of the page:
+            // ???? need to revisit this, horiz shrinkage causes collapse
+
+            //setContainerSize ("container");
+        });
+
+        // handle back/forward browser button press - if files are in cache as faded out, need to fade back in
+        window.onpageshow = function (evt) {
+            if (evt.persisted) showPage("container");
+        }
+
+        //window.onunload = function (evt) {
+        //    // an unload handler will force the page to NOT cache
+        //    // this makes the Safari back button work (no blinking when returning to page)
+        //    // but, I can't bring myself to do it
+        //}
+                
+    // -->
+    </script>
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="titleText">
+            <img src="images/navigation/title.jpg" alt="Bob Sullivan Construction and Design" / class="notalink">
+        </div>
+            
+        <div id="pictureBar" class="fadeMe">
+            <div id="pic1" class="photo">
+                <img src="images/mm1.jpg" alt="Photo1" />
+            </div>
+            <div id="pic2" class="photo">
+                <img src="images/mm2.jpg" alt="Photo2" />
+            </div>
+            <div id="pic3" class="photo">
+                <img src="images/mm3.jpg" alt="Photo3" />
+            </div>
+        </div>
+
+        <div id="introText" class="fadeMe">
+            <p>
+                Attention to detail is the hallmark of Bob Sullivan's work, he is a builder in the truest sense of the word; weaving together function and performance with the materials and the fabrication into a beautiful building, room, or object. An experienced fabricator in wood, metals, glass, and concrete, there is no project outside of Bob's capabilities. With a reputation of honesty, thoughtfulness, and precision, he will transform your design into something extraordinary.
+                <!--<span id="contact">Contact us for more information.</span>-->
+            </p>
+        </div>
+
+       <div style="clear: both;"></div>
+    </div>
+
+</body>
+</html>
+

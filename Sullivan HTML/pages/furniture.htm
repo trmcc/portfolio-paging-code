@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sullivan Design and Construction - Portfolio</title>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+        <meta content="Bob Sullivan, Robert Sullivan, design, build, woodwork, furniture, dallas, texas" name="keywords" />
+        <meta content="Bob Sullivan creates beautiful woodwork that enhances the modern home." name="description" />
+ 
+    <link rel="stylesheet" type="text/css" href="../jscss/bobcss.css" />
+
+    <script type="text/javascript" src="../jscss/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../jscss/util.js"></script>
+    <script type="text/javascript" src="../jscss/structure.js"></script>    
+    
+    <script type="text/javascript">
+    <!--
+
+        var project = new InitProject ("Specialized Furniture Design and Crafting");
+        
+        $( document ).ready(function() {
+            // executes when HTML-Document is loaded and DOM is ready
+            
+            var firstTitle, firstText, firstPic;
+            var picLocation = "../images/folio/";
+
+            nb ('project is', project.name);
+            // add each project description and the pictures that go with it
+            project.addDescription(firstText = "This desk was made with burl wood forming the natural curved edge on the overhang.");   // assign initial text and pic to vars, use to set up page one
+            project.addPic(firstPic = picLocation + "desk_IMG_3193.jpg");
+            project.addPic(picLocation + "desk_IMG_3205.jpg");
+            project.addPic(picLocation + "desk_IMG_3214_burldesk.jpg");
+            project.addDescription("This box reflects the form of the natural wood.");
+            project.addPic(picLocation + "furn_L1040331.jpg");
+            project.addPic(picLocation + "furn_L1040332.jpg");
+            project.addDescription("The table was designed to show off the wood grain.");
+            project.addPic(picLocation + "table_IMG_0182.jpg");
+            project.addPic(picLocation + "table_IMG_3873.jpg");
+
+            // attach handler to click events
+            $("#titleText, #home").click(function() {
+                fadeNgo("../index.htm");
+            });
+            $("#contact").click(function() {
+                fadeNgo("contact.htm");
+            });
+            $("#leftArrow").click(function() {
+                project.arrowPress(-1, "projText", "projPic");
+            });
+            $("#rightArrow").click(function() {
+                project.arrowPress(1, "projText", "projPic");
+            });
+            
+            // set up initial values
+            //project.arrowPress(0, "projText", "projPic");
+            $( "#projTitle h2" ).text(project.name);
+            $( "#projText p:first" ).text(firstText);
+            $( "#projPic img" ).attr("src", firstPic);
+                        
+            // keypressed
+            $( document ).keydown(function( event ) {
+                var isArrowKey;
+                isArrowKey = keyEventHandler (event);
+                if (isArrowKey != 0) {
+                    project.arrowPress(isArrowKey, "projText", "projPic");
+                }
+                
+                //keyEventHandler (event);
+            });
+
+        });
+        
+        $(window).load(function() {
+            // executes when complete page is fully loaded, including all frames, objects and images
+
+            // make it fit into visible area
+            setContainerSize ("container");
+
+            // now can set the pics to preloading
+            preloadImages (project.allPics());
+
+            // set the page to visible
+            showPage("container");            
+        });
+
+        // handle back/forward browser button press - if files are in cache as faded out, need to fade back in
+        //window.onpageshow = function (evt) {
+        //    if (evt.persisted) showPage("container");
+        //}
+             
+    // -->
+    </script>
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="titleText">
+            <img src="../images/navigation/title.jpg" alt="Bob Sullivan Construction and Design" />
+        </div>
+
+        <div id="projTitle" class="fadeMe">
+            <h2>Specialized Furniture Design and Crafting</h2>
+        </div>
+        
+        <div id="asquare">
+            <div id="projPic" class="fadeMe">
+                <img id="prettyPic" src='../images/white_square.jpg' alt='Photo' />
+            </div>
+        </div>
+
+
+
+        <div id="projText" class="fadeMe">
+            <p>
+                Bob Sullivan also designs and builds his own furniture.
+            </p>
+        </div>
+        
+
+
+
+        <div id="nav" class="fadeMe">
+            <span class="navChunk navSize2 leftSide" id="home">
+                <img src="../images/navigation/home.jpg" class="leftSide" alt="Home" />
+            </span>
+            <span class="navChunk navSize1 leftSide" id="contact">
+                <img src="../images/navigation/contact.jpg" class="leftSide" alt="Contact" />
+            </span>
+            <span class="navChunk navSize3 rightSide" id="rightArrow">
+                <img src="../images/navigation/next.jpg" class="rightSide" alt="Next Image" />
+            </span>
+            <span class="navChunk navSize1 rightSide" id="leftArrow">
+                <img src="../images/navigation/prev.jpg" class="rightSide" alt="Previous Image" />
+            </span>
+        <div style="clear: both;"></div>
+
+
+        </div>
+
+
+        <!--<div style="clear: both;"></div>-->
+
+    </div>
+
+</body>
+</html>
+

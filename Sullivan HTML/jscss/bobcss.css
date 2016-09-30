@@ -1,0 +1,232 @@
+body {	/* font format is "font-style font-variant font-weight font-size/line-height font-family" like "italic bold 12px/30px Georgia, serif" */
+	overflow: hidden;	/* get rid of that scrollbar, which is also the thing making the topBox jump around between mm and page */
+	font: 62.5%/150% "Trebuchet MS", sans-serif;  /* font size can be calculated from pixels to em: pixels/16=em */
+	color: #654421;
+	}
+h1 {	/* title of site */
+	margin-top: 0;
+	font-size: 1.7em;
+	/*font-weight: normal;*/
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	}
+h2 {	/* use for links text */
+	margin-top: 0;
+	font-size: 1.2em;
+	/*font-weight: normal;*/
+	/*line-height: 180%;*/
+	letter-spacing: .3em;
+	/*letter-spacing: .09em;*/
+	}
+	h2 a {
+		text-decoration: none;
+		}
+	a:link { 
+		color: #666666;
+		}
+	a:visited { 
+		color: #666666;
+		}
+	a:hover { 
+		color: #FF6600	!important;	/* otherwise setting anchor text color wipes out the hover */
+		text-decoration: none;
+		}
+	a:active { 
+		color: #996600;
+		}
+h3 {	/* titles in text area */
+	display: inline;	/* remove line break after header element */
+	font-size: 1.2em;
+	font-weight: normal;
+	letter-spacing: .3em;
+	}
+
+p {
+	margin-top: 0;
+/*	font-size: 0.875em;*/
+/*	letter-spacing: 0;	/* clear out letter spacing (used in titles) */
+	}
+
+table {
+	border-collapse: collapse;
+/*	letter-spacing: 0;	/* clear out letter spacing (used in titles) */
+	}
+td {
+	border: thin;
+	padding-right: 1em;
+	text-align: left;
+	}
+
+.lessSpaceBelow {	/* remove some space below element (like headers) */
+	margin-bottom: .4em;
+	}
+
+.fadeMe {
+	opacity: 0;
+	filter: alpha(opacity=0);	/* get opacity in IE */
+	}
+
+/*
+visibility
+positioning
+offset values
+floating
+width/height
+margin
+border
+padding
+font info
+*/
+
+#container {
+	/*visibility: hidden;	/* hide until all size calcs have been done */
+
+	/*this is from Marc's site - note I'm using margins not width*/
+	/*margin: 4% auto 0;
+	/*border: 1px solid green;*/
+
+	position: relative;	/* why do I have this? */
+	width: 90%;
+	margin: auto;
+	border: thin solid silver;
+	}
+#titleText {
+	float: left;
+	width: 53%;
+	margin-top: 5%;
+	margin-bottom: 3%;
+	margin-left: 4%;
+	border: 1px solid green;
+	}
+	#titleText img {
+		width: 100%
+	}
+#introText {
+	/*opacity: 0; replace all this with fadeMe class*/
+	/*	filter: alpha(opacity=0);	/* get opacity in IE */
+	float: left;
+	width: 53%;
+	margin-top: 1%;
+	margin-bottom: 3%;
+	margin-left: 4%;
+	border: 1px solid aqua;
+	}
+#projTitle {	/* projTitle and projText replace introText from main menu when you get to the sub menu */
+	/*opacity: 0;*/
+	/*	filter: alpha(opacity=0);	/* get opacity in IE */
+	clear: left;
+	float: left;
+	width: 34%;		
+	margin-left: 4%;
+	border: 1px solid grey;
+	}
+#projText {
+	/*opacity: 0;*/
+	/*	filter: alpha(opacity=0);	/* get opacity in IE */
+	float: left;
+	width: 34%;
+	margin-left: 4%;
+	border: 1px solid blue;
+	}
+#pictureBar {
+	/*opacity: 0;*/
+	/*	filter: alpha(opacity=0);	/* get opacity in IE */
+	float: right;
+	width: 16%;
+	margin-top: 3%;
+	margin-right: 17%;
+	margin-bottom: 4%;
+	border: 1px solid pink;
+	}
+	.photo {
+		margin-bottom: 26%;	/* play with this number to make mm and page same height */
+		border: 1px solid red;
+	}
+		#pic1 {
+			background: yellow;
+		}
+		#pic2 {
+			background: blue;
+		}
+		#pic3 {
+			margin-bottom: 0;
+			background: red;
+		}
+		.photo img {
+			vertical-align: top;	/* By default, an image is rendered inline, like a letter. It sits on the same line that a, b, c and d sit on. There is space below that line for the descenders you find on letters like f, j, p and q. You can adjust the vertical-align of the image to position it elsewhere. */
+			width: 100%;
+		}
+#asquare {
+	position: relative;
+	float: right;
+	width: 48%;	padding-bottom: 48%;
+	margin-right: 7%;	/* just FYI: this isn't needed in the width calc */
+	border: 1px solid red;
+
+}
+#projPic {
+	/*	opacity: 0;	/* oddly, this needs to be on projPic (not asquare) otherwise in IE it will just pop in, not fade */
+	/*	filter: alpha(opacity=0);	/* get opacity in IE */
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	border: 1px solid purple;
+	}
+	#projPic img {
+/*		position: relative;
+		width: 50%;
+		height: 100px;
+*/		}
+	/*#projPic h1, h2, p {*/
+	/*	margin-top: 0;*/
+	/*	}*/
+
+#nav {	/* have it go below picture, then raise it with position relative and a neg top margin (in ems b/c % doesn't take) */
+	clear: both;
+	/*opacity: 0;*/
+	/*	filter: alpha(opacity=0);	/* get opacity in IE */
+	position: relative;
+	top: -1.0em;
+	width: 40%;	/* photoshop width is 39% */
+	margin-left: 4%;
+	margin-bottom: 3.5%;	/* photoshop margin is 4%, play with this to control height */
+	border: 1px solid black;
+	white-space: nowrap;	/* keep individual nav images from wrapping inside this containing div */
+	}
+	.navChunk {
+		display: inline-block;	/* must be inline-block (or use div tags in HTML) AND have width property to scale */
+		border: 1px solid green;
+	}
+	.leftSide {
+		float: left;
+		margin-right: 2%;
+		border: 1px solid red;
+	}
+	.rightSide {
+		float: right;
+		margin-left: 2%;
+		border: 1px solid orange;
+	}
+	.navSize1 {
+		width: 21%;	/* 42/347 percentage of nav area */
+	}
+	.navSize2 {
+		width: 16%;	/* 32/347 percentage of nav area */
+	}
+	.navSize3 {
+		width: 12.5%;	/* 27/347 percentage of nav area */
+	}
+
+#titleText, #pictureBar, #nav img {
+	cursor: pointer;
+	}
+	.notalink {	/* use on elements to turn off cursor when they are not a link */
+		cursor: default;
+	}
+img {
+	vertical-align: top;
+	max-width: 100%;	/* make images scale */
+	max-height: 100%;	/* image will pop below container without this */
+	}
